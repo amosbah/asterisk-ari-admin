@@ -1,0 +1,40 @@
+{
+    "name": "indigophp/ini",
+    "description": "Provides better INI parsing and rendering",
+    "license": "MIT",
+    "keywords": ["ini", "parser", "renderer"],
+    "homepage": "http://indigophp.com",
+    "authors": [
+        {
+            "name": "Márk Sági-Kazár",
+            "email": "mark.sagikazar@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.5"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "^2.4",
+        "henrikbjorn/phpspec-code-coverage" : "^1.0",
+        "coduo/phpspec-data-provider-extension": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Indigo\\Ini\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "spec\\Indigo\\Ini\\": "spec/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpspec run",
+        "test-ci": "vendor/bin/phpspec run -c phpspec.yml.ci"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.3-dev"
+        }
+    }
+}

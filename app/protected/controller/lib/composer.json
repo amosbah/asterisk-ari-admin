@@ -1,0 +1,5 @@
+{
+    "require": {
+        "supervisorphp/configuration": "^0.2.1"
+    }
+}

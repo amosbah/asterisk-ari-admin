@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="shortcut icon" type="image/ico"
+	href="http://www.datatables.net/favicon.ico">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0">
+<title><?php echo $this->data['title']; ?></title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="<?php echo $data['rootUrl']; ?>global/public/stylesheets/dataTables.bootstrap.css">
+<link rel="stylesheet" type="text/css"
+	href="<?php echo $data['rootUrl']; ?>global/public/stylesheets/shCore.css">
+<link rel="stylesheet" type="text/css"
+	href="<?php echo $data['rootUrl']; ?>global/public/stylesheets/demo.css">
+<script type="text/javascript" language="javascript"
+	src="<?php echo $data['rootUrl']; ?>global/public/javascripts/jquery.dataTables.js">
+	
+</script>
+<script type="text/javascript" language="javascript"
+	src="<?php echo $data['rootUrl']; ?>global/public/javascripts/dataTables.bootstrap.js">
+	
+</script>
+<script type="text/javascript" language="javascript"
+	src="<?php echo $data['rootUrl']; ?>global/public/javascripts/shCore.js">
+	
+</script>
+<script type="text/javascript" language="javascript"
+	src="<?php echo $data['rootUrl']; ?>global/public/javascripts/demo.js">
+	
+</script>
+<script type="text/javascript" language="javascript" class="init">
+	$(document)
+			.ready(
+					function() {
+						$('#Transp')
+								.DataTable(
+										{
+											"processing" : true,
+											"serverSide" : true,
+											ajax : "<?php echo $data['rootUrl']; ?>global/public/scripts/cdr_processing.php",
+											scrollY : 300,
+											paging : false,
+											searching : false,
+											"ordering" : false,
+											info : false,
+											"columns" : [ {
+												// The `data` parameter refers to the data for the cell (defined by the
+												// `data` option, which defaults to the column being worked with, in
+												// this case `data: 0`.
+												"render" : function(data, type,	row) {
+													return data + ' (' + row[1]
+															+ ')';
+												},
+												"targets" : 0
+												},
+												{"data": null, "render": 1},
+												{"data": null, "render": 2}
+											]
+										});
+					});
+</script>
+</head>
+<body class="dt-example dt-example-bootstrap">
+
+	<div class="container">
+		<ol class="breadcrumb">
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Library</a></li>
+			<li class="active">Data</li>
+		</ol>
+		<div class="panel panel-primary">
+			<div class="panel-heading">ADD PjSIP TRANSPORT</div>
+			<div class="panel-body">
+				<form class="form-horizontal" action="/action_page.php">
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="name">Name:</label>
+						<div class="col-sm-4">
+							<input type="name" class="form-control" id="name"
+								placeholder="Enter transport name" name="name">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="protocol">Protocol:</label>
+						<div class="col-sm-2">
+							<select class="form-control" id="protocol">
+								<option>udp</option>
+								<option>tcp</option>
+								<option>tls</option>
+								<option>ws</option>
+								<option>wss</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="bind">Bind:</label>
+						<div class="col-sm-4">
+							<input type="bind" class="form-control" id="bind"
+								placeholder="Enter bind address" name="bind">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-4">
+							<button type="submit" class="btn btn-default">Submit</button>
+						</div>
+					</div>
+
+				</form>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-6">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">ADD PjSIP TRANSPORT</h3>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div
+								class="col-xs-6 col-sm-6 col-md-6 separator social-login-box">
+								<br /> <a href="http://www.jquery2dotnet.com"
+									class="btn btn-block" role="button">Log in using Facebook</a> <br />
+								<a href="http://www.jquery2dotnet.com"
+									class="btn twitter btn-block" role="button">Log in using
+									Twitter</a>
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6 login-box">
+								<form role="form">
+									<div class="input-group">
+										<span class="input-group-addon"><span
+											class="glyphicon glyphicon-user"></span></span> <input type="text"
+											class="form-control" placeholder="Username" required
+											autofocus />
+									</div>
+									<div class="input-group">
+										<span class="input-group-addon"><span
+											class="glyphicon glyphicon-lock"></span></span> <input
+											type="password" class="form-control" placeholder="Password"
+											required />
+									</div>
+									<p>
+										<a href="http://www.jquery2dotnet.com">Lost your password?</a>
+									</p>
+									Don't have an account? <a href="http://www.jquery2dotnet.com">Sign
+										up here</a>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="panel-footer">
+						<div class="row">
+							<div class="col-xs-6 col-sm-6 col-md-6">
+								<div class="checkbox">
+									<label> <input type="checkbox" value="Remember">
+										Remember me
+									</label>
+								</div>
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6">
+								<button type="button" class="btn btn-labeled btn-success">
+									<span class="btn-label"><i
+										class="glyphicon glyphicon-ok"></i></span>Success
+								</button>
+								<button type="button" class="btn btn-labeled btn-danger">
+									<span class="btn-label"><i
+										class="glyphicon glyphicon-remove"></i></span>Cancel
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-6">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">EXISTING PjSIP TRANSPORTS</h3>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<section>
+								<div class="demo-html"></div>
+								<table id="Transp" class="table" cellspacing="0" width="100%">
+									<thead>
+										<tr>
+											<th class="centered">NAME</th>
+											<th>PROT</th>
+											<th>BIND</th>
+										</tr>
+									</thead>
+								</table>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+</body>
+</html>
