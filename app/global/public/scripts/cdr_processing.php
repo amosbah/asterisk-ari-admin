@@ -44,7 +44,7 @@ $sql_details = array(
 	'user' => 'root',
 	'pass' => 'pwd',
 	'db'   => 'asterisk',
-	'host' => '127.0.0.1:8102'
+	'host' => '127.0.0.1'
 );
 
 
